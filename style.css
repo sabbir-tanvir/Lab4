@@ -1,0 +1,192 @@
+body {
+  background: url(hh.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  /* Ensure full viewport height */
+  display: flex;
+  /* Allow vertical stacking of elements */
+  flex-direction: column;
+  /* Stack elements on top of each other */
+}
+
+
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  backdrop-filter: blur(400px);
+
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a, .dropbtn {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+}
+
+li.dropdown {
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 20px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1;}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.anime {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: red;
+  position: absolute;
+  /* Absolute positioning for independent movement */
+  /* Animation properties as before (refer to previous responses) */
+  animation: example 6s infinite;
+  animation-direction: forwards;
+  /* Confine animation within viewport using viewport units */
+  top: calc(15vh);
+  /* Start 10% from the top of the viewport */
+  left: calc(10vw);
+  /* Start 10% from the left of the viewport */
+}
+
+.anime img {
+  width: 100%;
+  border-radius: 50%;
+
+}
+
+.anime .circle-spin {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(0);
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border-top: .2rem solid blue;
+  border-bottom: .2rem solid blue;
+  border-left: .2rem solid yellow;
+  border-right: .2rem solid yellow;
+  animation: aboutSpineer 5s linear infinite;
+}
+
+@keyframes aboutSpineer {
+  100% {
+    transform: translate(-50%, -50%) rotate(-360deg);
+  }
+}
+
+@keyframes example {
+  0% {
+
+    left: calc(10vw);
+    top: calc(15vh);
+  }
+
+  25% {
+
+    left: calc(90vw - 210px);
+    /* Right edge minus element width */
+    top: calc(15vh);
+  }
+
+  50% {
+
+    left: calc(90vw - 210px);
+    /* Right edge minus element width */
+    top: calc(85vh - 210px);
+    /* Bottom edge minus element height */
+  }
+
+  75% {
+
+    left: calc(10vw);
+    top: calc(85vh - 210px);
+    /* Bottom edge minus element height */
+  }
+
+  100% {
+
+    left: calc(10vw);
+    top: calc(15vh);
+  }
+}
+
+.pagination {
+
+  position: absolute;
+  bottom: 10vh;
+  width: 44vh;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.pagination a {
+  color: rgb(255, 255, 255);
+  float: left;
+  /* Remove float for horizontal alignment */
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+  display: inline-block;
+}
+
+.pagination a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.pagination a:hover:not(.active) {
+  background-color: #000000;
+}
+
+footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgb(135, 123, 123);
+  color: white;
+  text-align: center;
+}
