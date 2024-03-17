@@ -3,34 +3,21 @@ body {
   background-size: cover;
   background-position: center;
   min-height: 100vh;
-  /* Ensure full viewport height */
   display: flex;
-  /* Allow vertical stacking of elements */
   flex-direction: column;
-  /* Stack elements on top of each other */
 }
-
-
 
 ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
-  backdrop-filter: blur(400px);
-
+  background-color: #6e71893d;
+  height: 50px;
 }
 
 li {
   float: left;
-}
-
-li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
 }
 
 li a, .dropbtn {
@@ -53,8 +40,8 @@ li.dropdown {
   display: none;
   position: absolute;
   background-color: #f9f9f9;
-  min-width: 20px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  min-width: 100px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,1);
   z-index: 1;
 }
 
@@ -66,7 +53,9 @@ li.dropdown {
   text-align: left;
 }
 
-.dropdown-content a:hover {background-color: #f1f1f1;}
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
 
 .dropdown:hover .dropdown-content {
   display: block;
@@ -78,21 +67,15 @@ li.dropdown {
   border-radius: 50%;
   background-color: red;
   position: absolute;
-  /* Absolute positioning for independent movement */
-  /* Animation properties as before (refer to previous responses) */
   animation: example 6s infinite;
   animation-direction: forwards;
-  /* Confine animation within viewport using viewport units */
-  top: calc(15vh);
-  /* Start 10% from the top of the viewport */
-  left: calc(10vw);
-  /* Start 10% from the left of the viewport */
+  top: calc(8vh);
+  left: calc(2vw);
 }
 
 .anime img {
   width: 100%;
   border-radius: 50%;
-
 }
 
 .anime .circle-spin {
@@ -115,45 +98,30 @@ li.dropdown {
     transform: translate(-50%, -50%) rotate(-360deg);
   }
 }
-
 @keyframes example {
   0% {
-
-    left: calc(10vw);
-    top: calc(15vh);
+    left: calc(2vw);
+    top: calc(8vh);
   }
-
   25% {
-
-    left: calc(90vw - 210px);
-    /* Right edge minus element width */
-    top: calc(15vh);
+    left: calc(98vw - 210px);
+    top: calc(8vh);
   }
-
   50% {
-
-    left: calc(90vw - 210px);
-    /* Right edge minus element width */
+    left: calc(98vw - 210px);
     top: calc(85vh - 210px);
-    /* Bottom edge minus element height */
   }
-
   75% {
-
-    left: calc(10vw);
+    left: calc(2vw);
     top: calc(85vh - 210px);
-    /* Bottom edge minus element height */
   }
-
   100% {
-
-    left: calc(10vw);
-    top: calc(15vh);
+    left: calc(2vw);
+    top: calc(8vh);
   }
 }
 
 .pagination {
-
   position: absolute;
   bottom: 10vh;
   width: 44vh;
@@ -165,7 +133,6 @@ li.dropdown {
 .pagination a {
   color: rgb(255, 255, 255);
   float: left;
-  /* Remove float for horizontal alignment */
   padding: 8px 16px;
   text-decoration: none;
   transition: background-color 0.3s;
@@ -181,8 +148,55 @@ li.dropdown {
   background-color: #000000;
 }
 
-footer {
+#clockContainer {
+  position: fixed;
+  height: 20vw;
+  width: 20vw;
+  background: url(clock.jpg) no-repeat;
+  border-radius: 50%;
+  background-size: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0px 8px 16px 0px rgb(44, 46, 139);
+  z-index: -1;
+}
+
+#hour,
+#minute,
+#second {
   position: absolute;
+  background: black;
+  border-radius: 10px;
+  transform-origin: bottom;
+}
+
+#hour {
+  width: 1.8%;
+  height: 25%;
+  top: 25%;
+  left: 48.85%;
+  opacity: 1;
+}
+
+#minute {
+  width: 1.6%;
+  height: 30%;
+  top: 19%;
+  left: 48.9%;
+  opacity: 1;
+}
+
+#second {
+  width: 1%;
+  height: 40%;
+  top: 9%;
+  left: 49.25%;
+  opacity: 1;
+}
+
+footer {
+  position:fixed;
   left: 0;
   bottom: 0;
   width: 100%;
